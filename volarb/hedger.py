@@ -18,10 +18,10 @@ class DeltaHedger:
         self.cash -= trade * S + cost
         self.n_shares = target
         return {
-            "trade":  trade,   # shares comprate (positivo) o vendute (negativo)
-            "cost":   cost,   # transaction cost in dollari
-            "n_shares": self.n_shares, # nuova posizione dopo il trade
-            "cash":   self.cash,   # cash account dopo il trade
+            "trade":  trade,   # shares bought (positive) or bought (negative)
+            "cost":   cost,   # dollar transaction cost
+            "n_shares": self.n_shares, # new position
+            "cash":   self.cash,   # cash account after trade
         }
     
 
