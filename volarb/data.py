@@ -9,11 +9,10 @@ def fetch_market_data(start: str, end: str) -> pd.DataFrame:
     prices.columns.name = None
     prices["sigma"] = prices["sigma"] / 100
     prices["r"] = prices["r"] / 100
+    prices["rv"] = compute_realized_vol(prices["spot"], window=21)
     return prices.dropna()
 
 
 def compute_realized_vol(prices: pd.Series, window: int = 21) -> pd.Series:
     log_returns = np.log(prices / prices.shift(1))
-    realized_vol = log_returns.rolling(window).std() * np.sqrt(252)
-    return realized_vol
-
+    return log_returns.rolling(window).std() * np.sqrt(252)
