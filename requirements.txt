@@ -1,0 +1,7 @@
+# core
+numpy>=2.0.0
+scipy>=1.14.0
+pandas>=2.2.0
+yfinance>=0.2.50
+matplotlib>=3.9.0
+jupyter>=1.0.0
